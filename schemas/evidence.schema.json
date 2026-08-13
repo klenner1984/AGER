@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ager.dev/schemas/evidence.schema.json",
+  "title": "AGER Evidence Record",
+  "description": "Reference record for governance evidence linked to an AI agent, change, approval, control or incident.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["ager_version", "evidence_id", "record_id", "evidence_type", "captured_at", "location"],
+  "properties": {
+    "ager_version": {"const": "0.1"},
+    "evidence_id": {"type": "string", "minLength": 1},
+    "record_id": {"type": "string", "minLength": 1},
+    "agent_id": {"type": "string"},
+    "evidence_type": {
+      "enum": ["configuration", "prompt", "model_metadata", "permission_snapshot", "mcp_manifest", "approval", "transparency", "training", "log", "trace", "tool_call", "screenshot", "document", "test_result", "incident_artifact", "other"]
+    },
+    "captured_at": {"type": "string", "format": "date-time"},
+    "captured_by": {"type": "string"},
+    "location": {"type": "string", "minLength": 1},
+    "sha256": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+    "content_type": {"type": "string"},
+    "contains_personal_data": {"type": "boolean"},
+    "contains_secrets": {"type": "boolean"},
+    "retention_until": {"type": "string", "format": "date-time"},
+    "related_change_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "related_incident_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "notes": {"type": "string"}
+  }
+}
