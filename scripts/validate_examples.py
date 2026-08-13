@@ -10,6 +10,8 @@ PAIRS = [
     ("schemas/ager-record.schema.json", "examples/voice-agent.json"),
     ("schemas/change-event.schema.json", "examples/change-event.json"),
     ("schemas/incident.schema.json", "examples/incident.json"),
+    ("schemas/evidence.schema.json", "examples/evidence.json"),
+    ("schemas/mcp-permissions.schema.json", "examples/mcp-permissions.json"),
 ]
 
 
