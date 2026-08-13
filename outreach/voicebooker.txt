@@ -1,0 +1,18 @@
+Hallo VoiceBooker-Team,
+
+ich melde mich als Andreas von wolf-systems mit einem Partner-Pilotvorschlag rund um produktive Voice Agents und ihre Integrationen.
+
+Wir entwickeln AGER – Agent Governance & Evidence Record: ein offenes, maschinenlesbares Format für Agent-Inventar, MCP-/REST-Berechtigungen, Autonomy-Level, Human Controls, Change Events, Evidence und Incident-Readiness.
+
+Euer Enterprise-/Partner-Setup mit MCP, REST, Webhooks, CRM-/Kalender-/Datenbankanbindungen und Systemintegratoren ist für einen realen AGER-Pilot besonders interessant. Ziel wäre zu prüfen, ob ein AGER-Record als standardisiertes Governance-/Handover-Artefakt neben einer bestehenden Enterprise-Integration funktioniert.
+
+Pilotumfang: genau ein produktiver Agent, 30 Minuten Kickoff, danach AGER-Record, Permission Map, Blast-Radius, Human-Control-Review und Evidence-Baseline. Kostenloser Founding-Pilot; kein Compliance-Zertifikat und keine Rechtsberatung.
+
+Repo: https://github.com/klenner1984/AGER
+
+Wenn das für euren Partner-/Enterprise-Bereich relevant klingt, freue ich mich über den passenden technischen Ansprechpartner. Für einen telefonischen Follow-up würden wir vorher ausdrücklich eure Zustimmung einholen; alternativ bleiben wir vollständig schriftlich.
+
+Viele Grüße
+Andreas
+wolf-systems
+partner@wolf-systems.online
