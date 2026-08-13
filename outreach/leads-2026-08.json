@@ -1,0 +1,52 @@
+[
+  {
+    "lead_id": "dalvon-2026-08",
+    "organization": "dalvon / neuromanufaktur GmbH",
+    "fit_score": 9.8,
+    "email": "hello@dalvon.ai",
+    "subject": "Founding-Pilot: Governance-Evidence für produktive Voice Agents",
+    "body_file": "outreach/dalvon.txt",
+    "call_status": "AMBER",
+    "source_ref": "https://dalvon.ai/kontakt"
+  },
+  {
+    "lead_id": "kmk-2026-08",
+    "organization": "KMK Partners",
+    "fit_score": 9.8,
+    "email": "hello@kmk-partners.de",
+    "subject": "Co-Development-Pilot: AGER für Voice Agents und Audit Trails",
+    "body_file": "outreach/kmk.txt",
+    "call_status": "AMBER",
+    "source_ref": "https://kmk-partners.de/kontakt"
+  },
+  {
+    "lead_id": "voicebooker-2026-08",
+    "organization": "VoiceBooker / claiverly GmbH",
+    "fit_score": 9.7,
+    "email": "info@voicebooker.de",
+    "subject": "Partner-Pilot: AGER für MCP-/REST-Voice-Agenten",
+    "body_file": "outreach/voicebooker.txt",
+    "call_status": "AMBER",
+    "source_ref": "https://voicebooker.de/de"
+  },
+  {
+    "lead_id": "rsg-ai-2026-08",
+    "organization": "RSG AI / RSG Recruiting Solutions Group GmbH",
+    "fit_score": 9.6,
+    "email": "hello@rsg-ai.de",
+    "subject": "Founding-Pilot: Evidence-Layer für einen produktiven Voice Agent",
+    "body_file": "outreach/rsg-ai.txt",
+    "call_status": "AMBER",
+    "source_ref": "https://www.rsg-ai.de/"
+  },
+  {
+    "lead_id": "kapio-2026-08",
+    "organization": "kapio UG",
+    "fit_score": 9.5,
+    "email": "moin@kapio.eu",
+    "subject": "Co-Development-Pilot: AGER für MCP-/n8n-Agenten",
+    "body_file": "outreach/kapio.txt",
+    "call_status": "AMBER",
+    "source_ref": "https://www.kapio.eu/impressum"
+  }
+]
