@@ -6,6 +6,7 @@
     "email": "hello@dalvon.ai",
     "subject": "Founding-Pilot: Governance-Evidence für produktive Voice Agents",
     "body_file": "outreach/dalvon.txt",
+    "email_status": "FORM_OR_BOOKING_FIRST",
     "call_status": "AMBER",
     "source_ref": "https://dalvon.ai/kontakt"
   },
@@ -16,6 +17,7 @@
     "email": "hello@kmk-partners.de",
     "subject": "Co-Development-Pilot: AGER für Voice Agents und Audit Trails",
     "body_file": "outreach/kmk.txt",
+    "email_status": "INVITED_COLLABORATION",
     "call_status": "AMBER",
     "source_ref": "https://kmk-partners.de/kontakt"
   },
@@ -26,6 +28,7 @@
     "email": "info@voicebooker.de",
     "subject": "Partner-Pilot: AGER für MCP-/REST-Voice-Agenten",
     "body_file": "outreach/voicebooker.txt",
+    "email_status": "PARTNER_FORM_FIRST",
     "call_status": "AMBER",
     "source_ref": "https://voicebooker.de/de"
   },
@@ -36,6 +39,7 @@
     "email": "hello@rsg-ai.de",
     "subject": "Founding-Pilot: Evidence-Layer für einen produktiven Voice Agent",
     "body_file": "outreach/rsg-ai.txt",
+    "email_status": "BOOKING_FIRST",
     "call_status": "AMBER",
     "source_ref": "https://www.rsg-ai.de/"
   },
@@ -46,7 +50,8 @@
     "email": "moin@kapio.eu",
     "subject": "Co-Development-Pilot: AGER für MCP-/n8n-Agenten",
     "body_file": "outreach/kapio.txt",
+    "email_status": "INVITED_COLLABORATION",
     "call_status": "AMBER",
-    "source_ref": "https://www.kapio.eu/impressum"
+    "source_ref": "https://kapio.eu/"
   }
 ]
