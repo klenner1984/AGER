@@ -34,3 +34,6 @@ jobs:
 
       - name: Smoke-test Exposure Scan
         run: python scripts/exposure_scan.py examples/voice-agent.json --json
+
+      - name: Smoke-test consent-first call gate
+        run: python scripts/call_gate.py examples/contact-consent.json --json
