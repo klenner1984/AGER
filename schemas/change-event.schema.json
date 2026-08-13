@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ager.dev/schemas/change-event.schema.json",
+  "title": "AGER Change Event",
+  "description": "Machine-readable record of a governance-relevant AI agent change.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["ager_version", "event_id", "record_id", "occurred_at", "change_type", "summary", "approved"],
+  "properties": {
+    "ager_version": {"const": "0.1"},
+    "event_id": {"type": "string", "minLength": 1},
+    "record_id": {"type": "string", "minLength": 1},
+    "agent_id": {"type": "string"},
+    "occurred_at": {"type": "string", "format": "date-time"},
+    "detected_at": {"type": "string", "format": "date-time"},
+    "change_type": {
+      "enum": ["model", "prompt", "tool", "mcp_server", "permission", "credential", "data_scope", "human_control", "deployment", "owner", "policy", "other"]
+    },
+    "summary": {"type": "string", "minLength": 1},
+    "before": {},
+    "after": {},
+    "security_relevant": {"type": "boolean", "default": false},
+    "blast_radius_changed": {"type": "boolean", "default": false},
+    "approved": {"type": "boolean"},
+    "approver": {"type": "string"},
+    "approval_ref": {"type": "string"},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "notes": {"type": "string"}
+  }
+}
