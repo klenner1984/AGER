@@ -1,0 +1,19 @@
+{
+  "ager_version": "0.1",
+  "lead_id": "demo-partner-001",
+  "organization": "Example Automation GmbH",
+  "contact_name": "Technical Partner Lead",
+  "channel": "automated_voice_call",
+  "status": "callback_requested",
+  "captured_at": "2026-08-13T09:30:00Z",
+  "purpose": "AGER founding-pilot discussion",
+  "evidence": {
+    "source_type": "callback_request",
+    "source_ref": "crm://lead/demo-partner-001/callback-request",
+    "notes": "Contact explicitly requested a telephone callback about the AGER pilot."
+  },
+  "ai_disclosure_required": true,
+  "identity_disclosure_required": true,
+  "audio_recording_allowed": false,
+  "notes": "Synthetic example. No real person's consent is represented."
+}
