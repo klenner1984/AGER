@@ -6,12 +6,16 @@ on:
       - 'schemas/**'
       - 'examples/**'
       - 'scripts/**'
+      - 'outreach/**'
+      - 'config/**'
       - '.github/workflows/validate.yml'
   pull_request:
     paths:
       - 'schemas/**'
       - 'examples/**'
       - 'scripts/**'
+      - 'outreach/**'
+      - 'config/**'
       - '.github/workflows/validate.yml'
 
 jobs:
@@ -37,3 +41,11 @@ jobs:
 
       - name: Smoke-test consent-first call gate
         run: python scripts/call_gate.py examples/contact-consent.json --json
+
+      - name: Compile outreach helpers
+        run: python -m py_compile scripts/privateemail_send.py scripts/privateemail_inbox.py scripts/consent_from_email.py
+
+      - name: Smoke-test PrivateEmail sender without network
+        env:
+          WOLF_EMAIL: ci@wolf-systems.invalid
+        run: python scripts/privateemail_send.py --to recipient@example.invalid --subject 'CI dry-run' --body-file outreach/sample.txt --dry-run
