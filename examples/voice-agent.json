@@ -1,0 +1,65 @@
+{
+  "ager_version": "0.1",
+  "record_id": "ager-example-voice-001",
+  "created_at": "2026-08-13T02:30:00Z",
+  "agent": {
+    "agent_id": "customer-service-voice-01",
+    "name": "Customer Service Voice Agent",
+    "purpose": "Handle inbound customer calls and create support tickets",
+    "provider": "Example Provider",
+    "model": "Example Model",
+    "environment": "production",
+    "autonomy_level": "A2"
+  },
+  "ownership": {
+    "business_owner": "Customer Operations",
+    "technical_owner": "AI Operations",
+    "governance_owner": "Operations Management"
+  },
+  "access": {
+    "systems": ["CRM", "support-ticketing", "telephony"],
+    "mcp_servers": [],
+    "credential_scopes": ["crm:read", "tickets:create"],
+    "write_access": true
+  },
+  "data": {
+    "categories": ["customer contact data", "support requests"],
+    "personal_data": true,
+    "confidential_data": false,
+    "retention": "Defined by organization policy",
+    "external_transfer": false
+  },
+  "actions": {
+    "permitted": ["answer inbound calls", "read customer record", "create support ticket"],
+    "prohibited": ["delete customer records", "issue refunds", "change payment details"],
+    "execution_limit": "Ticket creation only; financial actions prohibited"
+  },
+  "human_control": {
+    "approval_required": true,
+    "approver_role": "Human support agent for escalated actions",
+    "escalation": "Transfer call to human support",
+    "kill_switch": true
+  },
+  "transparency": {
+    "ai_disclosure": true,
+    "article_50_relevance": "not_assessed",
+    "evidence_refs": ["evidence://voice/disclosure-greeting/v1"]
+  },
+  "security": {
+    "tool_restrictions": ["No delete operations", "No payment operations"],
+    "network_restrictions": ["Approved service endpoints only"],
+    "monitoring": ["Call event logs", "Tool-call logs"],
+    "risk_refs": []
+  },
+  "blast_radius": {
+    "financial": 5,
+    "data": 45,
+    "communication": 60,
+    "execution": 30,
+    "propagation": 5,
+    "overall": 40
+  },
+  "evidence_refs": ["evidence://deployment/voice-agent-001"],
+  "change_refs": [],
+  "incident_refs": []
+}
