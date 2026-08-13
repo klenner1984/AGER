@@ -15,6 +15,12 @@ from datetime import datetime, timedelta, timezone
 from email.header import decode_header, make_header
 from email.message import Message
 
+PROFILES = {
+    "partner": ("WOLF_EMAIL_PARTNER", "WOLF_EMAIL_PARTNER_PASSWORD"),
+    "andreas": ("WOLF_EMAIL_ANDREAS", "WOLF_EMAIL_ANDREAS_PASSWORD"),
+    "kontakt": ("WOLF_EMAIL_KONTAKT", "WOLF_EMAIL_KONTAKT_PASSWORD"),
+}
+
 
 def require_env(name: str) -> str:
     value = os.environ.get(name)
@@ -46,13 +52,15 @@ def decode(value: str | None) -> str:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Read recent PrivateEmail replies")
+    parser.add_argument("--profile", choices=sorted(PROFILES), default="partner")
     parser.add_argument("--days", type=int, default=7)
     parser.add_argument("--from-address", default=None)
     parser.add_argument("--limit", type=int, default=20)
     args = parser.parse_args()
 
-    username = require_env("WOLF_EMAIL")
-    password = require_env("WOLF_EMAIL_PASSWORD")
+    email_env, password_env = PROFILES[args.profile]
+    username = require_env(email_env)
+    password = require_env(password_env)
     host = os.environ.get("PRIVATEEMAIL_IMAP_HOST", "mail.privateemail.com")
     port = int(os.environ.get("PRIVATEEMAIL_IMAP_PORT", "993"))
 
@@ -78,6 +86,8 @@ def main() -> int:
             msg = email.message_from_bytes(raw)
             body = text_body(msg)
             out.append({
+                "mailbox_profile": args.profile,
+                "mailbox": username,
                 "imap_id": msg_id.decode(),
                 "message_id": msg.get("Message-ID", ""),
                 "from": decode(msg.get("From")),
