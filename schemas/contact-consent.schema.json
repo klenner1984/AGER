@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ager.dev/schemas/contact-consent.schema.json",
+  "title": "AGER Contact Consent Record",
+  "type": "object",
+  "required": [
+    "ager_version",
+    "lead_id",
+    "organization",
+    "channel",
+    "status",
+    "captured_at",
+    "evidence"
+  ],
+  "properties": {
+    "ager_version": {"const": "0.1"},
+    "lead_id": {"type": "string", "minLength": 1},
+    "organization": {"type": "string", "minLength": 1},
+    "contact_name": {"type": "string"},
+    "channel": {
+      "type": "string",
+      "enum": [
+        "automated_voice_call",
+        "human_voice_call",
+        "email",
+        "contact_form",
+        "partner_form",
+        "inbound_callback",
+        "meeting"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "unverified",
+        "invited_channel",
+        "explicit_consent",
+        "callback_requested",
+        "booked",
+        "opted_out",
+        "do_not_contact"
+      ]
+    },
+    "captured_at": {"type": "string", "format": "date-time"},
+    "expires_at": {"type": "string", "format": "date-time"},
+    "purpose": {"type": "string"},
+    "evidence": {
+      "type": "object",
+      "required": ["source_type", "source_ref"],
+      "properties": {
+        "source_type": {
+          "type": "string",
+          "enum": [
+            "written_consent",
+            "web_form",
+            "calendar_booking",
+            "callback_request",
+            "partner_invitation",
+            "existing_relationship",
+            "other"
+          ]
+        },
+        "source_ref": {"type": "string", "minLength": 1},
+        "notes": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "ai_disclosure_required": {"type": "boolean", "default": true},
+    "identity_disclosure_required": {"type": "boolean", "default": true},
+    "audio_recording_allowed": {"type": "boolean", "default": false},
+    "notes": {"type": "string"}
+  },
+  "additionalProperties": false
+}
