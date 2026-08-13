@@ -1,0 +1,16 @@
+{
+  "ager_version": "0.1",
+  "evidence_id": "ev-2026-08-13-001",
+  "record_id": "ager-voice-001",
+  "agent_id": "voice-sales-01",
+  "evidence_type": "permission_snapshot",
+  "captured_at": "2026-08-13T02:12:00Z",
+  "captured_by": "AGER Monitor",
+  "location": "evidence://snapshots/voice-sales-01/2026-08-13T02-12-00Z.json",
+  "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+  "content_type": "application/json",
+  "contains_personal_data": false,
+  "contains_secrets": false,
+  "related_change_ids": ["chg-2026-08-13-001"],
+  "notes": "Permission snapshot captured immediately after approved CRM write scope change."
+}
