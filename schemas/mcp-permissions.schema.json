@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ager.dev/schemas/mcp-permissions.schema.json",
+  "title": "AGER MCP Permissions Record",
+  "description": "Structured record of MCP server exposure, delegated permissions and approval boundaries for an AI agent.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["ager_version", "mcp_record_id", "record_id", "server_name", "trust_status", "tools"],
+  "properties": {
+    "ager_version": {"const": "0.1"},
+    "mcp_record_id": {"type": "string", "minLength": 1},
+    "record_id": {"type": "string", "minLength": 1},
+    "agent_id": {"type": "string"},
+    "server_name": {"type": "string", "minLength": 1},
+    "server_uri": {"type": "string"},
+    "provider": {"type": "string"},
+    "trust_status": {"enum": ["internal", "approved_third_party", "unreviewed_third_party", "blocked", "unknown"]},
+    "authentication": {"enum": ["none", "api_key", "oauth", "service_account", "user_delegated", "other", "unknown"]},
+    "credential_scope": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "tools": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "access"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "access": {"enum": ["read", "write", "execute", "delete", "financial", "admin", "mixed"]},
+          "resource_scope": {"type": "array", "items": {"type": "string"}},
+          "human_approval_required": {"type": "boolean"},
+          "rate_or_value_limit": {"type": "string"},
+          "notes": {"type": "string"}
+        }
+      }
+    },
+    "network_restrictions": {"type": "array", "items": {"type": "string"}},
+    "data_categories": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "last_reviewed_at": {"type": "string", "format": "date-time"},
+    "reviewed_by": {"type": "string"},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+  }
+}
