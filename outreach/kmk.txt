@@ -1,0 +1,18 @@
+Hallo KMK-Team,
+
+ich melde mich als Andreas von wolf-systems mit einem konkreten Co-Development-Vorschlag, weil ihr Voice Agents, CRM/ERP-Anbindung, n8n/Make, Audit-Trails und Human-in-the-Loop bereits praktisch zusammenführt.
+
+Wir entwickeln AGER – Agent Governance & Evidence Record: ein offenes, maschinenlesbares Format für Agent-Inventar, Tool-/API-Berechtigungen, Autonomy-Level, Human Controls, Change Events, Evidence und Incident-Readiness.
+
+Wir suchen aktuell wenige Founding-Partner für einen kostenlosen Pilot mit genau einem bestehenden produktiven Agenten. Bei euch wäre besonders interessant zu testen, wie gut AGER eure bestehenden Audit-/HITL-Strukturen ergänzt und ob daraus ein wiederverwendbares Governance-Artefakt für Kundenprojekte oder White-Label-Setups entsteht.
+
+Pilotumfang: ein Agent, 30 Minuten Kickoff, anschließend AGER-Record, Permission Map, Blast-Radius, Human-Control-Review und Evidence-Baseline. Kein Compliance-Zertifikat und keine Rechtsberatung.
+
+Repo: https://github.com/klenner1984/AGER
+
+Wenn das grundsätzlich interessant ist: Sollen wir zunächst schriftlich abstimmen, oder dürfen wir euch zu genau diesem Pilot einmal kurz mit einem KI-gestützten Telefonassistenten im Auftrag von Andreas zurückrufen?
+
+Viele Grüße
+Andreas
+wolf-systems
+partner@wolf-systems.online
