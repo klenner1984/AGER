@@ -1,0 +1,23 @@
+{
+  "ager_version": "0.1",
+  "incident_id": "inc-2026-08-13-001",
+  "record_id": "ager-voice-001",
+  "agent_id": "voice-sales-01",
+  "kind": "near_miss",
+  "status": "contained",
+  "severity": "medium",
+  "occurred_at": "2026-08-13T02:20:00Z",
+  "detected_at": "2026-08-13T02:20:05Z",
+  "contained_at": "2026-08-13T02:22:00Z",
+  "summary": "Agent attempted an out-of-scope CRM write that was blocked by an approval gate.",
+  "timeline": [
+    {"timestamp": "2026-08-13T02:20:00Z", "event": "Agent requested CRM write", "actor": "voice-sales-01"},
+    {"timestamp": "2026-08-13T02:20:01Z", "event": "Human approval gate blocked execution", "actor": "policy-gateway"}
+  ],
+  "tool_calls": ["crm.update_contact"],
+  "permissions_at_time": ["crm.read", "crm.write_with_approval"],
+  "human_approvals": [],
+  "containment_actions": ["Blocked write", "Opened governance review"],
+  "owasp_asi_refs": ["ASI02", "ASI03"],
+  "safe_export_ready": false
+}
