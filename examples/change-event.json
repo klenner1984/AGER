@@ -1,0 +1,17 @@
+{
+  "ager_version": "0.1",
+  "event_id": "chg-2026-08-13-001",
+  "record_id": "ager-voice-001",
+  "agent_id": "voice-sales-01",
+  "occurred_at": "2026-08-13T02:10:00Z",
+  "detected_at": "2026-08-13T02:12:00Z",
+  "change_type": "permission",
+  "summary": "CRM contact update permission added to production agent.",
+  "before": {"crm": ["read"]},
+  "after": {"crm": ["read", "write"]},
+  "security_relevant": true,
+  "blast_radius_changed": true,
+  "approved": true,
+  "approver": "Head of Sales",
+  "approval_ref": "evidence://approval/chg-2026-08-13-001"
+}
