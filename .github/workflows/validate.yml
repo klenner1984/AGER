@@ -47,5 +47,5 @@ jobs:
 
       - name: Smoke-test PrivateEmail sender without network
         env:
-          WOLF_EMAIL: ci@wolf-systems.invalid
-        run: python scripts/privateemail_send.py --to recipient@example.invalid --subject 'CI dry-run' --body-file outreach/sample.txt --dry-run
+          WOLF_EMAIL_PARTNER: ci@wolf-systems.invalid
+        run: python scripts/privateemail_send.py --profile partner --to recipient@example.invalid --subject 'CI dry-run' --body-file outreach/sample.txt --dry-run
