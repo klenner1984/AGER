@@ -1,0 +1,32 @@
+{
+  "ager_version": "0.1",
+  "mcp_record_id": "mcp-voice-sales-01-crm",
+  "record_id": "ager-voice-001",
+  "agent_id": "voice-sales-01",
+  "server_name": "crm-mcp",
+  "server_uri": "https://mcp.example.invalid/crm",
+  "provider": "Example CRM Integrator",
+  "trust_status": "approved_third_party",
+  "authentication": "oauth",
+  "credential_scope": ["contacts.read", "contacts.write"],
+  "tools": [
+    {
+      "name": "crm.get_contact",
+      "access": "read",
+      "resource_scope": ["contacts"],
+      "human_approval_required": false
+    },
+    {
+      "name": "crm.update_contact",
+      "access": "write",
+      "resource_scope": ["contacts"],
+      "human_approval_required": true,
+      "rate_or_value_limit": "Maximum 25 updates per hour"
+    }
+  ],
+  "network_restrictions": ["Outbound only to approved CRM API"],
+  "data_categories": ["business contact data"],
+  "last_reviewed_at": "2026-08-13T02:15:00Z",
+  "reviewed_by": "Technical Owner",
+  "evidence_refs": ["ev-2026-08-13-001"]
+}
