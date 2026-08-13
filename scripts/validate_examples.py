@@ -12,6 +12,7 @@ PAIRS = [
     ("schemas/incident.schema.json", "examples/incident.json"),
     ("schemas/evidence.schema.json", "examples/evidence.json"),
     ("schemas/mcp-permissions.schema.json", "examples/mcp-permissions.json"),
+    ("schemas/contact-consent.schema.json", "examples/contact-consent.json"),
 ]
 
 
