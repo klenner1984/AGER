@@ -1,0 +1,18 @@
+Hallo dalvon-Team,
+
+ich melde mich als Andreas von wolf-systems mit einem konkreten Founding-Pilotvorschlag für produktive Voice-/Chat-Agenten mit API- und MCP-Zugriff.
+
+Wir entwickeln AGER – Agent Governance & Evidence Record: ein offenes, maschinenlesbares Format für Agent-Inventar, Tool-/MCP-Berechtigungen, Autonomy-Level, Human Controls, Change Events, Evidence und Incident-Readiness.
+
+Euer Enterprise-/Partner-Fokus mit MCP/API, RBAC, SSO, API Keys, On-Prem- und White-Label-Szenarien ist für AGER besonders interessant. Wir möchten prüfen, ob ein AGER-Record als standardisiertes Governance-/Handover-Artefakt für Systemhäuser, Agenturen und Enterprise-Kunden taugt.
+
+Pilotumfang: genau ein bestehender Agent, 30 Minuten Kickoff, anschließend AGER-Record, Permission Map, Blast-Radius, Human-Control-Review und Evidence-Baseline. Kostenloser Founding-Pilot; kein Compliance-Zertifikat und keine Rechtsberatung.
+
+Repo: https://github.com/klenner1984/AGER
+
+Wenn das grundsätzlich passt, freue ich mich über den vorgesehenen Partner-/Enterprise-Ansprechpartner oder den passenden Buchungsweg. Einen KI-gestützten Telefon-Follow-up nutzen wir nur nach ausdrücklicher Zustimmung.
+
+Viele Grüße
+Andreas
+wolf-systems
+partner@wolf-systems.online
