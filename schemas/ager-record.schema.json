@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ager.dev/schemas/ager-record.schema.json",
+  "title": "AGER Record",
+  "description": "Agent Governance & Evidence Record v0.1-draft",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["ager_version", "record_id", "agent", "ownership"],
+  "properties": {
+    "ager_version": {"const": "0.1"},
+    "record_id": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "format": "date-time"},
+    "updated_at": {"type": "string", "format": "date-time"},
+    "agent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["agent_id", "name", "purpose", "autonomy_level"],
+      "properties": {
+        "agent_id": {"type": "string", "minLength": 1},
+        "name": {"type": "string", "minLength": 1},
+        "purpose": {"type": "string", "minLength": 1},
+        "provider": {"type": "string"},
+        "model": {"type": "string"},
+        "model_version": {"type": "string"},
+        "environment": {"enum": ["development", "test", "staging", "production", "other"]},
+        "autonomy_level": {"enum": ["A0", "A1", "A2", "A3", "A4"]}
+      }
+    },
+    "ownership": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["business_owner", "technical_owner"],
+      "properties": {
+        "business_owner": {"type": "string", "minLength": 1},
+        "technical_owner": {"type": "string", "minLength": 1},
+        "governance_owner": {"type": "string"}
+      }
+    },
+    "access": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "systems": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "mcp_servers": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "credential_scopes": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "write_access": {"type": "boolean"}
+      }
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "categories": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "personal_data": {"type": "boolean"},
+        "confidential_data": {"type": "boolean"},
+        "retention": {"type": "string"},
+        "external_transfer": {"type": "boolean"}
+      }
+    },
+    "actions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "permitted": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "prohibited": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "financial_limit": {"type": "number", "minimum": 0},
+        "execution_limit": {"type": "string"}
+      }
+    },
+    "human_control": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "approval_required": {"type": "boolean"},
+        "approver_role": {"type": "string"},
+        "escalation": {"type": "string"},
+        "kill_switch": {"type": "boolean"}
+      }
+    },
+    "transparency": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ai_disclosure": {"type": "boolean"},
+        "article_50_relevance": {"enum": ["unknown", "not_assessed", "potential", "confirmed", "not_applicable"]},
+        "evidence_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      }
+    },
+    "security": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tool_restrictions": {"type": "array", "items": {"type": "string"}},
+        "network_restrictions": {"type": "array", "items": {"type": "string"}},
+        "monitoring": {"type": "array", "items": {"type": "string"}},
+        "risk_refs": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "blast_radius": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "financial": {"type": "integer", "minimum": 0, "maximum": 100},
+        "data": {"type": "integer", "minimum": 0, "maximum": 100},
+        "communication": {"type": "integer", "minimum": 0, "maximum": 100},
+        "execution": {"type": "integer", "minimum": 0, "maximum": 100},
+        "propagation": {"type": "integer", "minimum": 0, "maximum": 100},
+        "overall": {"type": "integer", "minimum": 0, "maximum": 100}
+      }
+    },
+    "evidence_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "change_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "incident_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+  }
+}
