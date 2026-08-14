@@ -41,6 +41,9 @@ jobs:
       - name: Validate tiered outreach portfolio
         run: python scripts/validate_outreach.py
 
+      - name: Smoke-test partner pipeline routing
+        run: python scripts/pipeline_next.py --top 3
+
       - name: Smoke-test Exposure Scan
         run: python scripts/exposure_scan.py examples/voice-agent.json --json
 
@@ -48,7 +51,7 @@ jobs:
         run: python scripts/call_gate.py examples/contact-consent.json --json
 
       - name: Compile outreach helpers
-        run: python -m py_compile scripts/privateemail_send.py scripts/privateemail_inbox.py scripts/consent_from_email.py scripts/validate_outreach.py
+        run: python -m py_compile scripts/privateemail_send.py scripts/privateemail_inbox.py scripts/consent_from_email.py scripts/validate_outreach.py scripts/pipeline_next.py
 
       - name: Smoke-test PrivateEmail sender without network
         env:
