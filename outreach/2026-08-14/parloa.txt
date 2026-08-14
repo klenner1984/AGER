@@ -1,0 +1,18 @@
+Hallo Parloa-Partnerteam,
+
+ich melde mich als Andreas von wolf-systems mit einem Technology-Partner-Ansatz, nicht als klassische Compliance-Beratung.
+
+Wir entwickeln AGER — Agent Governance & Evidence Record — als offenen, maschinenlesbaren Evidence-Layer für produktive AI-Agenten. AGER soll ergänzend zu einer Agent-Plattform den operativen Zustand eines Deployments festhalten: Agent-Identität, Berechtigungen/Systemzugriffe, Autonomie, Human Controls, Änderungen, Evidence und Incident-Readiness.
+
+Für Parloa sehen wir den möglichen Fit vor allem als komplementäre Technologie für Partner- und Enterprise-Deployments: ein interoperables Governance-/Handover-Format, das unabhängig vom eigentlichen Agent Builder bleibt.
+
+Wir würden das gern zunächst mit einem einzigen Deployment als kostenlosen technischen Proof prüfen. Wenn der Record belastbar ist, wäre anschließend ein Adapter-/Technology-Partner-Modell denkbar.
+
+Repo: https://github.com/klenner1984/AGER
+
+Kein Compliance-Zertifikat und keine Rechtsberatung. Wenn dieser Ansatz grundsätzlich zu eurem Technology-Partner-Track passt, freue ich mich über die passende Produkt-/Partnerperson. Ein KI-gestützter Rückruf erfolgt nur nach ausdrücklicher Zustimmung.
+
+Viele Grüße
+Andreas
+wolf-systems
+partner@wolf-systems.online
