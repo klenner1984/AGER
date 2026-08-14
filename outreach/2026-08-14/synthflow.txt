@@ -1,0 +1,16 @@
+Hello Synthflow Partnerships,
+
+I’m Andreas from wolf-systems. We are building AGER — Agent Governance & Evidence Record — as an open, machine-readable operational evidence layer for production AI agents.
+
+Synthflow’s partner model is a strong fit because BPOs, resellers/system integrators and technology partners stay involved in deployment and ongoing operations. AGER is designed to make exactly that operational state portable and auditable: agent identity, connected systems and permissions, autonomy, human controls, changes, evidence and incident-readiness.
+
+We are looking for a small number of founding partners for a free pilot on exactly one production deployment. We create an AGER Exposure Baseline and then evaluate whether the artifact can scale across customer deployments as a governance/handover layer.
+
+Repository: https://github.com/klenner1984/AGER
+
+This is not a compliance certificate or legal advice. If the concept is relevant to your technology or partner ecosystem, I’d like to scope the pilot with the appropriate partnerships/product person. Any AI-assisted callback would only happen after explicit permission.
+
+Best regards
+Andreas
+wolf-systems
+partner@wolf-systems.online
