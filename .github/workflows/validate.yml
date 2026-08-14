@@ -8,6 +8,7 @@ on:
       - 'scripts/**'
       - 'outreach/**'
       - 'config/**'
+      - 'docs/**'
       - '.github/workflows/validate.yml'
   pull_request:
     paths:
@@ -16,6 +17,7 @@ on:
       - 'scripts/**'
       - 'outreach/**'
       - 'config/**'
+      - 'docs/**'
       - '.github/workflows/validate.yml'
 
 jobs:
@@ -36,6 +38,9 @@ jobs:
       - name: Validate examples
         run: python scripts/validate_examples.py
 
+      - name: Validate tiered outreach portfolio
+        run: python scripts/validate_outreach.py
+
       - name: Smoke-test Exposure Scan
         run: python scripts/exposure_scan.py examples/voice-agent.json --json
 
@@ -43,7 +48,7 @@ jobs:
         run: python scripts/call_gate.py examples/contact-consent.json --json
 
       - name: Compile outreach helpers
-        run: python -m py_compile scripts/privateemail_send.py scripts/privateemail_inbox.py scripts/consent_from_email.py
+        run: python -m py_compile scripts/privateemail_send.py scripts/privateemail_inbox.py scripts/consent_from_email.py scripts/validate_outreach.py
 
       - name: Smoke-test PrivateEmail sender without network
         env:
