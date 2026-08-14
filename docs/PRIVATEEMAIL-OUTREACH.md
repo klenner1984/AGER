@@ -16,12 +16,39 @@ Default outreach profile is `partner`.
 
 Default service endpoints:
 
-- SMTP SSL: `mail.privateemail.com:465`
+- SMTP implicit TLS: `mail.privateemail.com:465`
 - SMTP STARTTLS alternative: `mail.privateemail.com:587`
 - IMAP SSL: `mail.privateemail.com:993`
 - Username: full wolf-systems email address
 
+The sender supports both SMTP modes through `PRIVATEEMAIL_SMTP_SECURITY=ssl|starttls`.
+
 Credentials must be supplied locally through environment variables. Never commit real mailbox passwords or secrets.
+
+## Secure Windows local setup
+
+Recommended Windows setup stores each password with Windows DPAPI under the current Windows user rather than in a plaintext `.env` file.
+
+The local setup bootstrap creates:
+
+- `%APPDATA%\wolf-systems\privateemail\partner.password.dpapi`
+- `%APPDATA%\wolf-systems\privateemail\andreas.password.dpapi`
+- `%APPDATA%\wolf-systems\privateemail\kontakt.password.dpapi`
+- `%APPDATA%\wolf-systems\privateemail\load-privateemail.ps1`
+
+The generated loader decrypts the DPAPI secrets only into the current PowerShell process and sets the AGER environment variables. It also configures SMTP 465/SSL by default and can use 587/STARTTLS when needed.
+
+In every new PowerShell session load the credentials with:
+
+```powershell
+. "$env:APPDATA\wolf-systems\privateemail\load-privateemail.ps1"
+```
+
+Then verify authentication without sending mail:
+
+```powershell
+python scripts/privateemail_auth_test.py
+```
 
 ## Environment
 
@@ -34,9 +61,22 @@ export WOLF_EMAIL_KONTAKT='kontakt@wolf-systems.online'
 export WOLF_EMAIL_KONTAKT_PASSWORD='LOCAL_SECRET'
 export PRIVATEEMAIL_SMTP_HOST='mail.privateemail.com'
 export PRIVATEEMAIL_SMTP_PORT='465'
+export PRIVATEEMAIL_SMTP_SECURITY='ssl'
 export PRIVATEEMAIL_IMAP_HOST='mail.privateemail.com'
 export PRIVATEEMAIL_IMAP_PORT='993'
 ```
+
+For the STARTTLS alternative use port `587` and `PRIVATEEMAIL_SMTP_SECURITY=starttls`.
+
+## SMTP authentication test
+
+`privateemail_auth_test.py` logs into all three configured mailboxes and exits without sending any message:
+
+```bash
+python scripts/privateemail_auth_test.py
+```
+
+A successful setup prints `SMTP AUTH OK` for `partner`, `andreas` and `kontakt`.
 
 ## Selective send
 
