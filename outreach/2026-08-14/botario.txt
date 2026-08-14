@@ -1,0 +1,18 @@
+Hallo botario-Team,
+
+ich melde mich als Andreas von wolf-systems über euer Partnerprogramm.
+
+Wir entwickeln AGER — Agent Governance & Evidence Record — als offenen, maschinenlesbaren Evidence-Layer für produktive AI-Agenten. Gerade bei Voice-/Phonebot-Deployments in regulierten Umgebungen wird aus unserer Sicht wichtig, nicht nur Funktionen, sondern auch Agent-Identität, Systemzugriffe, Human Handover, Änderungen und belastbare Evidence nachvollziehbar festzuhalten.
+
+Für einen Founding-Pilot bieten wir kostenlos genau einen produktiven Agenten an: Permission-/System-Map, Autonomy-Level, Human Controls, Change-/Evidence-Baseline, Blast Radius und Incident-Readiness.
+
+Ziel ist zu prüfen, ob ein AGER-Record als standardisiertes Governance-/Handover-Artefakt in Partner- und Kundenprojekten Mehrwert bringt — insbesondere dort, wo hohe Datenschutz- und Nachweisanforderungen bestehen.
+
+Repo: https://github.com/klenner1984/AGER
+
+Kein Compliance-Zertifikat und keine Rechtsberatung. Wenn der Ansatz in euer Partnermodell passt, würde ich gern mit der zuständigen Partner-/Technikperson den Pilot-Scope abstimmen. Ein KI-gestützter Rückruf erfolgt nur nach ausdrücklicher Zustimmung.
+
+Viele Grüße
+Andreas
+wolf-systems
+partner@wolf-systems.online
