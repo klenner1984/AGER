@@ -1,0 +1,18 @@
+Hallo VoiceBooker-Team,
+
+ich melde mich als Andreas von wolf-systems über euren Enterprise-&-Partner-Kontext.
+
+Wir entwickeln AGER — Agent Governance & Evidence Record — als offenen, maschinenlesbaren Evidence-Layer für produktive AI-Agenten. VoiceBooker verbindet Agenten über REST/MCP, SIP, Webhooks und externe CRM-/Kalender-/Ticket-/Datenbanksysteme. Genau diese Systemgrenzen möchten wir mit AGER nachvollziehbar machen.
+
+Unser Founding-Pilot ist bewusst klein: ein bestehender produktiver Agent, kostenlos. Ergebnis sind Agent-Identität, REST/MCP-Permissions, Autonomy-Level, Human Controls, Change-/Evidence-Baseline, Blast Radius und Incident-Readiness.
+
+Interessant wäre für uns vor allem die Frage, ob dieser Record künftig als standardisiertes Governance-/Handover-Artefakt für Reseller und Systemintegratoren mitgeliefert werden kann.
+
+Repo: https://github.com/klenner1984/AGER
+
+Kein Compliance-Zertifikat und keine Rechtsberatung. Wenn der Ansatz passt, würde ich den Scope gern mit der technisch oder partnerseitig verantwortlichen Person abstimmen. Ein KI-gestützter Rückruf erfolgt nur nach ausdrücklicher Zustimmung.
+
+Viele Grüße
+Andreas
+wolf-systems
+partner@wolf-systems.online
