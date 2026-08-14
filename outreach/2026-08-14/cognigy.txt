@@ -1,0 +1,18 @@
+Hallo NiCE-Cognigy-Partnerteam,
+
+ich melde mich als Andreas von wolf-systems mit einem Technology-/SI-Partner-Ansatz.
+
+Wir entwickeln AGER — Agent Governance & Evidence Record — als offenen, maschinenlesbaren Evidence-Layer für produktive AI-Agenten. AGER dokumentiert ergänzend zum eigentlichen Agent-System den operativen Deployment-Zustand: Agent-Identität, angebundene Systeme und Berechtigungen, Autonomie, Human Controls, Änderungen, Evidence und Incident-Readiness.
+
+Für NiCE Cognigy sehen wir den möglichen Fit als Adapter-/Export-Layer für Enterprise-Deployments und Partner-Handover. Gerade in SI-Projekten mit CRM-, Voice- und Data-Stack-Integrationen könnte ein standardisierter Record die technische und organisatorische Übergabe ergänzen.
+
+Wir würden zunächst kostenlos genau ein Deployment als technischen Proof modellieren. Wenn das Artefakt belastbar ist, wäre anschließend ein Technology-Partner-/Adapter-Modell interessant.
+
+Repo: https://github.com/klenner1984/AGER
+
+Kein Compliance-Zertifikat und keine Rechtsberatung. Falls der Ansatz in euer Partnerökosystem passt, freue ich mich über die passende Partner-/Produktperson. Ein KI-gestützter Rückruf erfolgt nur nach ausdrücklicher Zustimmung.
+
+Viele Grüße
+Andreas
+wolf-systems
+partner@wolf-systems.online
