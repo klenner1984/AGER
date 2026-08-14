@@ -51,7 +51,7 @@ jobs:
         run: python scripts/call_gate.py examples/contact-consent.json --json
 
       - name: Compile outreach helpers
-        run: python -m py_compile scripts/privateemail_send.py scripts/privateemail_inbox.py scripts/consent_from_email.py scripts/validate_outreach.py scripts/pipeline_next.py
+        run: python -m py_compile scripts/privateemail_send.py scripts/privateemail_auth_test.py scripts/privateemail_inbox.py scripts/consent_from_email.py scripts/validate_outreach.py scripts/pipeline_next.py
 
       - name: Smoke-test PrivateEmail sender without network
         env:
