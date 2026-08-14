@@ -1,0 +1,18 @@
+Hallo sipgate-Partnerteam,
+
+ich melde mich als Andreas von wolf-systems über euer Partnerprogramm.
+
+Wir entwickeln AGER — Agent Governance & Evidence Record — als offenen, maschinenlesbaren Evidence-Layer für produktive AI-Agenten. Bei einer Plattform mit bereits vielen eingesetzten AI Agents und einem aktiven Partnernetzwerk sehen wir den größten Hebel nicht in einem Einzelkundenprojekt, sondern in einem wiederholbaren Deployment-Artefakt.
+
+Unser Vorschlag: Wir nehmen einen AI-Agent-Use-Case und erstellen kostenlos eine AGER Exposure Baseline mit Agent-Identität, System-/Toolzugriffen, Autonomy-Level, Human Controls, Change-/Evidence-Baseline, Blast Radius und Incident-Readiness.
+
+Wenn das technisch trägt, wäre der nächste Schritt zu prüfen, ob ein solcher Record als standardisiertes Governance-/Handover-Artefakt für Partner-/Kunden-Deployments sinnvoll ist.
+
+Repo: https://github.com/klenner1984/AGER
+
+Kein Compliance-Zertifikat und keine Rechtsberatung. Wenn der Ansatz zu eurem Partnerprogramm passt, würde ich gern mit der passenden Produkt-/Partnerperson einen kurzen Scope abstimmen. Ein KI-gestützter Rückruf erfolgt nur nach ausdrücklicher Zustimmung.
+
+Viele Grüße
+Andreas
+wolf-systems
+partner@wolf-systems.online
