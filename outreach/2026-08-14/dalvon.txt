@@ -1,0 +1,18 @@
+Hallo dalvon-Team,
+
+ich melde mich als Andreas von wolf-systems über euren Enterprise-/Partner-Kontext.
+
+Wir entwickeln AGER — Agent Governance & Evidence Record — als offenen, maschinenlesbaren Evidence-Layer für produktive AI-Agenten. Bei dalvon ist der Fit besonders klar: API/MCP, RBAC/SSO, API-Keys, On-Premises und White-Label erzeugen genau die Art von Berechtigungs- und Deployment-Komplexität, die AGER strukturiert dokumentieren soll.
+
+Wir suchen wenige Founding-Partner für einen kostenlosen Pilot mit genau einem produktiven Agenten. Wir erstellen dabei Agent-Identität, MCP/API-Permission-Map, Autonomy-Level, Human Controls, Change-/Evidence-Baseline, Blast Radius und Incident-Readiness.
+
+Ziel ist nicht ein Compliance-Zertifikat, sondern zu prüfen, ob ein AGER-Record als wiederholbares Governance-/Handover-Artefakt für eure Partner- und Kunden-Deployments taugt.
+
+Repo: https://github.com/klenner1984/AGER
+
+Falls das grundsätzlich passt, würde ich gern mit der technisch oder partnerseitig verantwortlichen Person einen kurzen Pilot-Scope abstimmen. Ein KI-gestützter Rückruf erfolgt nur nach ausdrücklicher Zustimmung.
+
+Viele Grüße
+Andreas
+wolf-systems
+partner@wolf-systems.online
