@@ -2,15 +2,30 @@ Hallo telli-Team,
 
 ich knüpfe an unseren bestehenden Austausch an. Aus ADEP ist inzwischen AGER — Agent Governance & Evidence Record — als offener, maschinenlesbarer Evidence-Layer für produktive AI-Agenten weiterentwickelt worden.
 
-Der für telli relevante Punkt ist nicht ein weiteres Compliance-Dokument, sondern ein wiederholbares Deployment-Artefakt: Agent-Identität, System-/Toolzugriffe, Autonomy-Level, Human Controls, Änderungen, Evidence und Incident-Readiness in einem konsistenten Record.
+Damit ihr das nicht abstrakt bewerten müsst, würde ich es auf einen sehr kleinen Test reduzieren:
 
-Mein Vorschlag: Wir nehmen genau einen bestehenden produktiven telli-Agenten und erstellen kostenlos eine AGER Exposure Baseline. Danach können wir gemeinsam bewerten, ob das als standardisiertes Governance-/Handover-Artefakt für Implementation- oder Integration-Partner und deren Kunden sinnvoll skaliert.
+Wir nehmen genau einen bestehenden produktiven oder produktionsnahen telli-Agenten und erstellen kostenlos eine AGER Exposure Baseline. Dafür benötigen wir keine Produktionspasswörter, API-Secrets oder Kundendaten — es reichen die technischen Eckdaten des Agenten, seine System-/Toolzugriffe, Human Controls und vorhandene Change-/Evidence-Informationen.
 
+Ihr bekommt innerhalb von fünf Arbeitstagen nach Eingang der vereinbarten Inputs:
+- Agent Governance & Evidence Record,
+- Tool/API-Permission-Map,
+- Autonomy-Level und Blast-Radius,
+- Human-Control-/Escalation-Review,
+- Evidence-Baseline,
+- Change- und Incident-Readiness-Check,
+- kurze priorisierte Gap-Liste.
+
+Danach entscheidet ihr ohne Verpflichtung, ob das Artefakt für eure Implementation-/Integration-Partner und Kunden überhaupt Mehrwert hat. Wenn nein, endet es dort. Wenn ja, können wir über eine wiederkehrende AGER-Office-Lösung für weitere Deployments sprechen.
+
+Pilotbeschreibung: https://github.com/klenner1984/AGER/blob/main/docs/TELLI-FOUNDING-PILOT.md
 Repo: https://github.com/klenner1984/AGER
 
-Kein Compliance-Zertifikat und keine Rechtsberatung — der Pilot soll ausschließlich zeigen, ob der operative Evidence-Layer in realen Deployments Mehrwert liefert.
+Kein Compliance-Zertifikat und keine Rechtsberatung.
 
-Wenn das für euch technisch interessant ist, reicht mir ein kurzer Hinweis auf die passende Produkt-/Partnerperson. Ein KI-gestützter Rückruf durch unseren Assistenten erfolgt nur, wenn ihr ihn ausdrücklich möchtet.
+Wenn der Test grundsätzlich passt, genügt als Antwort:
+„Pilot okay — send input checklist“
+
+Alternativ reicht mir der Name der Produkt-/Technikperson, die den ersten Agenten auswählen soll. Ein KI-gestützter Rückruf erfolgt nur auf ausdrücklichen Wunsch.
 
 Viele Grüße
 Andreas
