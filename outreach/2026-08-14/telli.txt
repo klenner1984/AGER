@@ -1,0 +1,18 @@
+Hallo telli-Team,
+
+ich knüpfe an unseren bestehenden Austausch an. Aus ADEP ist inzwischen AGER — Agent Governance & Evidence Record — als offener, maschinenlesbarer Evidence-Layer für produktive AI-Agenten weiterentwickelt worden.
+
+Der für telli relevante Punkt ist nicht ein weiteres Compliance-Dokument, sondern ein wiederholbares Deployment-Artefakt: Agent-Identität, System-/Toolzugriffe, Autonomy-Level, Human Controls, Änderungen, Evidence und Incident-Readiness in einem konsistenten Record.
+
+Mein Vorschlag: Wir nehmen genau einen bestehenden produktiven telli-Agenten und erstellen kostenlos eine AGER Exposure Baseline. Danach können wir gemeinsam bewerten, ob das als standardisiertes Governance-/Handover-Artefakt für Implementation- oder Integration-Partner und deren Kunden sinnvoll skaliert.
+
+Repo: https://github.com/klenner1984/AGER
+
+Kein Compliance-Zertifikat und keine Rechtsberatung — der Pilot soll ausschließlich zeigen, ob der operative Evidence-Layer in realen Deployments Mehrwert liefert.
+
+Wenn das für euch technisch interessant ist, reicht mir ein kurzer Hinweis auf die passende Produkt-/Partnerperson. Ein KI-gestützter Rückruf durch unseren Assistenten erfolgt nur, wenn ihr ihn ausdrücklich möchtet.
+
+Viele Grüße
+Andreas
+wolf-systems
+andreas@wolf-systems.online
