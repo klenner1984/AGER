@@ -1,0 +1,16 @@
+Hallo Spitch-Partnerteam,
+
+ich melde mich als Andreas von wolf-systems mit einem Technology-Partner-Ansatz.
+
+Wir entwickeln AGER — Agent Governance & Evidence Record — als offenen, maschinenlesbaren Evidence-Layer für produktive AI-Agenten. Besonders in regulierten Umgebungen soll AGER den operativen Zustand eines Deployments nachvollziehbar machen: Agent-Identität, System-/Datenzugriffe, Autonomie, Human Controls, Änderungen, Evidence und Incident-Readiness.
+
+Spitch ist für uns wegen der Einsätze in Banking, Insurance, Gesundheitswesen und Public Sector ein besonders interessanter Fit. Wir würden gern mit genau einem realen Deployment einen kostenlosen technischen Proof erstellen und prüfen, ob ein AGER-Record als wiederholbares Governance-/Handover-Artefakt in Partner- und Kundenprojekten Mehrwert bringt.
+
+Repo: https://github.com/klenner1984/AGER
+
+Kein Compliance-Zertifikat und keine Rechtsberatung. Wenn dieser Ansatz grundsätzlich in euer Partnernetzwerk passt, freue ich mich über die passende Partner-/Produktperson. Ein KI-gestützter Rückruf erfolgt nur nach ausdrücklicher Zustimmung.
+
+Viele Grüße
+Andreas
+wolf-systems
+partner@wolf-systems.online
