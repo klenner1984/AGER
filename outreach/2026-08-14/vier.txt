@@ -1,0 +1,18 @@
+Hallo VIER-Partnerteam,
+
+ich melde mich als Andreas von wolf-systems über euren Partnerbereich.
+
+Wir entwickeln AGER — Agent Governance & Evidence Record — als offenen, maschinenlesbaren Evidence-Layer für produktive AI-Agenten. VIER ist für uns besonders interessant, weil ihr viele Kunden, ein bestehendes Partnernetzwerk, Voice-/Conversational-AI und API-basierte Integrationen über mehrere Technologien hinweg verbindet.
+
+Unser Vorschlag ist bewusst klein: ein realer AI-/Voice-Deployment-Use-Case, kostenlos als AGER Exposure Baseline. Erfasst werden Agent-Identität, System-/Toolzugriffe, Autonomy-Level, Human Controls, Change-/Evidence-Baseline, Blast Radius und Incident-Readiness.
+
+Wenn der Record im Pilot funktioniert, würden wir prüfen, ob AGER als technologieübergreifendes Governance-/Handover-Artefakt in Partner- oder Kundenprojekten sinnvoll skaliert.
+
+Repo: https://github.com/klenner1984/AGER
+
+Kein Compliance-Zertifikat und keine Rechtsberatung. Wenn das für Business Partner oder die AI-/Voice-Plattform interessant ist, freue ich mich über den passenden Ansprechpartner. Ein KI-gestützter Rückruf erfolgt nur nach ausdrücklicher Zustimmung.
+
+Viele Grüße
+Andreas
+wolf-systems
+partner@wolf-systems.online
