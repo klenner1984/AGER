@@ -51,9 +51,15 @@ jobs:
         run: python scripts/call_gate.py examples/contact-consent.json --json
 
       - name: Compile outreach helpers
-        run: python -m py_compile scripts/privateemail_send.py scripts/privateemail_auth_test.py scripts/privateemail_inbox.py scripts/consent_from_email.py scripts/validate_outreach.py scripts/pipeline_next.py
+        run: python -m py_compile scripts/privateemail_send.py scripts/privateemail_auth_test.py scripts/privateemail_inbox.py scripts/consent_from_email.py scripts/validate_outreach.py scripts/pipeline_next.py scripts/smtp_send.py
 
-      - name: Smoke-test PrivateEmail sender without network
+      - name: Smoke-test provider-neutral SMTP sender without network
+        env:
+          WOLF_SMTP_PROVIDER: brevo
+          WOLF_EMAIL_PARTNER: ci@wolf-systems.invalid
+        run: python scripts/smtp_send.py --profile partner --to recipient@example.invalid --subject 'CI SMTP dry-run' --body-file outreach/sample.txt --dry-run
+
+      - name: Smoke-test PrivateEmail legacy sender without network
         env:
           WOLF_EMAIL_PARTNER: ci@wolf-systems.invalid
         run: python scripts/privateemail_send.py --profile partner --to recipient@example.invalid --subject 'CI dry-run' --body-file outreach/sample.txt --dry-run
