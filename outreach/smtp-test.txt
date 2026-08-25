@@ -1,0 +1,8 @@
+Hallo,
+
+dies ist eine kontrollierte Testmail des wolf-systems AGER SMTP-Setups über Brevo.
+
+Wenn diese Nachricht ankommt, funktioniert der authentifizierte Versand über outreach.wolf-systems.online technisch.
+
+Viele Grüße
+Andreas | wolf-systems
