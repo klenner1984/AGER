@@ -6,46 +6,73 @@ Target architecture:
 - Authoritative DNS: Cloudflare
 - Inbound mail: Cloudflare Email Routing (free)
 - Outbound mail: Brevo SMTP Free
-- Sender identities:
-  - partner@wolf-systems.online
-  - andreas@wolf-systems.online
-  - kontakt@wolf-systems.online
+- Authenticated outbound domain: `outreach.wolf-systems.online`
+- Outbound sender identities:
+  - `partner@outreach.wolf-systems.online`
+  - `andreas@outreach.wolf-systems.online`
+  - `kontakt@outreach.wolf-systems.online`
+- Transitional Reply-To / legacy inbound identities:
+  - `partner@wolf-systems.online`
+  - `andreas@wolf-systems.online`
+  - `kontakt@wolf-systems.online`
 - AGER sender: `scripts/smtp_send.py`
 - Legacy fallback during migration: Namecheap Private Email
+
+## Current state
+
+Completed:
+
+1. Namecheap nameservers changed to Cloudflare-assigned nameservers.
+2. Existing website and Private Email DNS records preserved in Cloudflare.
+3. `outreach.wolf-systems.online` added to Brevo as the dedicated sending domain.
+4. Brevo-Code, DKIM 1, DKIM 2, DMARC and branded tracking CNAME records added in Cloudflare.
+5. Brevo verified all required records successfully and the sending domain was authenticated.
+6. SMTP relay settings confirmed:
+   - Host: `smtp-relay.brevo.com`
+   - Port: `587`
+   - Security: STARTTLS
+   - Login: `b6a71e001@smtp-brevo.com`
+7. A Brevo SMTP key named `wolf-systems-ager` was generated. The secret value must never be committed.
+
+Still pending:
+
+- Securely load `BREVO_SMTP_KEY` on the machine/runtime that sends mail.
+- Add/verify the required Brevo sender identities if Brevo asks for them separately.
+- Perform a controlled outbound test.
+- Configure Cloudflare Email Routing and verify the destination inbox.
+- Cut inbound MX from Private Email to Cloudflare only after routing tests are ready.
 
 ## Safety rule
 
 Do not remove the existing Private Email MX records until all of the following are true:
 
-1. wolf-systems.online is active on Cloudflare DNS.
-2. All existing non-mail DNS records have been copied and checked.
-3. A destination mailbox has been verified in Cloudflare Email Routing.
-4. Routing rules for partner@, andreas@ and kontakt@ exist.
-5. Brevo has authenticated wolf-systems.online and the sender identities.
-6. SPF/DKIM/DMARC have been reviewed for the combined architecture.
-7. An outbound Brevo test succeeds.
-8. A controlled inbound routing test succeeds after MX cutover.
+1. All existing non-mail DNS records remain present and checked in Cloudflare.
+2. A destination mailbox has been verified in Cloudflare Email Routing.
+3. Routing rules for partner@, andreas@ and kontakt@ exist.
+4. The Brevo outbound sending domain and sender identities are accepted.
+5. SPF/DKIM/DMARC have been reviewed for the combined architecture.
+6. An outbound Brevo test succeeds.
+7. A controlled inbound routing test succeeds after MX cutover.
 
-## Phase 1 — Cloudflare DNS onboarding
+## Brevo outbound configuration
 
-- Add `wolf-systems.online` to Cloudflare Free.
-- Import/scan the current DNS zone.
-- Compare every A/AAAA/CNAME/TXT/MX record with the current Namecheap zone.
-- Do not switch nameservers until the imported zone is complete.
-- Change the domain nameservers at Namecheap to the pair assigned by Cloudflare.
-- Wait until Cloudflare reports the zone as Active.
+The live authenticated sending domain is `outreach.wolf-systems.online` rather than the root domain. This isolates outbound reputation from the legacy mailbox domain while Private Email remains active.
 
-## Phase 2 — Brevo outbound before MX cutover
+Environment variables:
 
-Brevo SMTP settings:
+```text
+WOLF_SMTP_PROVIDER=brevo
+WOLF_SMTP_HOST=smtp-relay.brevo.com
+WOLF_SMTP_PORT=587
+WOLF_SMTP_SECURITY=starttls
+BREVO_SMTP_LOGIN=b6a71e001@smtp-brevo.com
+BREVO_SMTP_KEY=<secret, load locally only>
+WOLF_EMAIL_PARTNER=partner@outreach.wolf-systems.online
+WOLF_EMAIL_ANDREAS=andreas@outreach.wolf-systems.online
+WOLF_EMAIL_KONTAKT=kontakt@outreach.wolf-systems.online
+```
 
-- Host: `smtp-relay.brevo.com`
-- Recommended port: 587
-- Security: STARTTLS
-- Username: Brevo SMTP login
-- Password: Brevo SMTP key (not API key and not account password)
-
-Authenticate `wolf-systems.online` in Brevo. Add exactly the DNS records Brevo currently provides for domain authentication. Do not invent DKIM selectors or verification values; use the values shown by the Brevo account.
+Never commit the real SMTP key. `.gitignore` excludes local environment and secret files.
 
 Test locally without sending:
 
@@ -55,48 +82,47 @@ python scripts/smtp_send.py \
   --to recipient@example.invalid \
   --subject "AGER SMTP dry-run" \
   --body-file outreach/sample.txt \
+  --reply-to andreas@wolf-systems.online \
   --dry-run
 ```
 
-Then perform one real test to an address controlled by wolf-systems.
+For the first real test, keep `--reply-to andreas@wolf-systems.online` while root-domain inbound mail still uses Private Email.
 
-## Phase 3 — Cloudflare Email Routing
+## Cloudflare Email Routing
 
 In Cloudflare Email Routing:
 
 1. Add and verify the destination inbox.
-2. Create routes:
-   - `andreas@wolf-systems.online` -> verified destination
-   - `partner@wolf-systems.online` -> verified destination
-   - `kontakt@wolf-systems.online` -> verified destination
+2. Create routes for the intended inbound addresses.
 3. Leave catch-all disabled initially unless there is a deliberate business reason to enable it.
-4. Let Cloudflare add/recommend its Email Routing MX/authentication records.
+4. Let Cloudflare provide the Email Routing MX/authentication records.
+5. Only then replace the legacy Private Email MX path.
 
-Cloudflare Email Routing requires Cloudflare DNS and replaces the inbound MX path. Therefore this is the actual inbound cutover point.
+Cloudflare Email Routing is the actual inbound cutover point. Until then, Private Email remains the rollback path.
 
-## Phase 4 — SPF, DKIM and DMARC review
+## SPF, DKIM and DMARC
 
-Important: a domain should publish only one SPF record at the root. When Cloudflare Email Routing and Brevo both require sender-policy data, merge their required mechanisms into one valid SPF policy where technically required; never create two independent `v=spf1` root TXT records.
+The root domain currently retains the Private Email SPF record while legacy outbound service remains available. Do not add a second independent root SPF record.
 
-DKIM records are provider-specific and may coexist under different selectors.
+The dedicated Brevo sending subdomain is authenticated through Brevo-provided records, including DKIM selectors and DMARC. Provider-specific DKIM records may coexist because they use distinct selectors.
 
-DMARC should start conservatively during migration, for example monitoring mode, then be tightened only after legitimate Cloudflare/Brevo traffic is confirmed aligned. The exact DMARC policy is an operational decision and should not be changed blindly.
+DMARC should remain conservative during migration until legitimate traffic is confirmed aligned, then it can be tightened deliberately.
 
-## Phase 5 — Cutover and verification
+## Cutover and verification
 
 After all prerequisites are green:
 
-- switch/confirm Cloudflare Email Routing MX records;
-- send a test from an external mailbox to each wolf-systems address;
-- confirm all three arrive at the verified destination;
-- send from each AGER sender profile through Brevo;
-- inspect message headers for SPF, DKIM and DMARC results;
+- send a test through Brevo from each intended AGER sender profile;
+- inspect delivered headers for DKIM and DMARC alignment;
 - check spam placement;
+- configure Cloudflare Email Routing destination and aliases;
+- switch/confirm Cloudflare Email Routing MX records;
+- send external inbound tests to all business addresses;
 - only then treat Private Email as unnecessary.
 
 ## Rollback
 
-Keep a copy of the prior Namecheap MX/TXT records until migration is proven. If inbound delivery fails during cutover, restore the previous MX records while troubleshooting. Do not cancel Private Email before the new path has passed both inbound and outbound tests.
+Keep a copy of the prior Namecheap/Private Email MX and TXT records until migration is proven. If inbound delivery fails during cutover, restore the previous MX records while troubleshooting. Do not cancel Private Email before the new path has passed both inbound and outbound tests.
 
 ## Cost model
 
