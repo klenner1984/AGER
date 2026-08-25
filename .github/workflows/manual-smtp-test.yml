@@ -1,0 +1,70 @@
+name: Manual Brevo SMTP test
+
+on:
+  workflow_dispatch:
+    inputs:
+      to:
+        description: Single recipient email address for the controlled test
+        required: true
+        type: string
+      profile:
+        description: Sender profile
+        required: true
+        default: andreas
+        type: choice
+        options:
+          - andreas
+          - partner
+          - kontakt
+      reply_to:
+        description: Reply-To address
+        required: true
+        default: andreas@wolf-systems.online
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: manual-brevo-smtp-test
+  cancel-in-progress: false
+
+jobs:
+  send-one-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      WOLF_SMTP_PROVIDER: brevo
+      WOLF_SMTP_HOST: smtp-relay.brevo.com
+      WOLF_SMTP_PORT: "587"
+      WOLF_SMTP_SECURITY: starttls
+      BREVO_SMTP_LOGIN: b6a71e001@smtp-brevo.com
+      BREVO_SMTP_KEY: ${{ secrets.BREVO_SMTP_KEY }}
+      WOLF_EMAIL_PARTNER: partner@outreach.wolf-systems.online
+      WOLF_EMAIL_ANDREAS: andreas@outreach.wolf-systems.online
+      WOLF_EMAIL_KONTAKT: kontakt@outreach.wolf-systems.online
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verify secret is configured
+        shell: bash
+        run: |
+          if [ -z "$BREVO_SMTP_KEY" ]; then
+            echo "BREVO_SMTP_KEY repository secret is missing"
+            exit 1
+          fi
+
+      - name: Send exactly one controlled test message
+        run: >-
+          python scripts/smtp_send.py
+          --profile "${{ inputs.profile }}"
+          --to "${{ inputs.to }}"
+          --subject "AGER Brevo SMTP Test"
+          --body-file outreach/smtp-test.txt
+          --reply-to "${{ inputs.reply_to }}"
